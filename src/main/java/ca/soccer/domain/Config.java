@@ -54,9 +54,5 @@ public class Config {
         return new Helper();
     }
 
-    @Bean(name = "teamValidator")
-    TeamValidator TeamValidator() {
-        return new TeamValidator();
-    }
 }
 
