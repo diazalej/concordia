@@ -31,8 +31,7 @@ public class SoccerTeamsTest{
     @Autowired
     Helper helper;
 
-    @Autowired
-    TeamValidator teamValidator;
+
     @Autowired
     Factory factory;
     
@@ -55,7 +54,6 @@ public class SoccerTeamsTest{
         Assert.assertTrue(helper.validateTeam(team2));
         Assert.assertTrue(helper.validateTeam(team3));
         Assert.assertTrue(helper.validateTeam(factory.generateRandomTeam()));
-        Assert.assertTrue(teamValidator.validateTeams());
     }
 }
 
