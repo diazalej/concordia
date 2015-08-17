@@ -1,9 +1,10 @@
 
-package ca.soccer.domain;
+package ca.soccer.config;
 /**
  * Created by alejandra on 27/07/15.
  */
 
+import ca.soccer.domain.*;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;

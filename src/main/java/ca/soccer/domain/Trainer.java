@@ -17,6 +17,8 @@ public class Trainer {
     private List<Team> previousTeamList = new LinkedList<Team>();
     private BigDecimal annualSalary;
 
+    public Trainer() {}
+
     public Trainer(String firstName, String lastName, Integer age, List<Team> previousTeamList, BigDecimal annualSalary) {
         this.firstName = firstName;
         this.lastName = lastName;

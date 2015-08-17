@@ -22,12 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="day2" />
+        <module name="soccerTeam" />
         <module name="soccerTeams" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="day2" target="1.5" />
+      <module name="soccerTeam" target="1.5" />
       <module name="soccerTeams" target="1.5" />
     </bytecodeTargetLevel>
   </component>

@@ -8,6 +8,8 @@ public class Team{
 	private Player[] players = new Player[22]; 
 	private Integer foundationYear;
 
+	public Team() {}
+
 	public Team(String name, Trainer trainer, Player[] players, Integer foundationYear){
 		this.name = name;
 		this.trainer = trainer;

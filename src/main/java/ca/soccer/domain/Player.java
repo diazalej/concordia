@@ -14,6 +14,7 @@ public class Player {
 	private Position position;
 	private Statistics statistics;
 
+	public Player() {}
 
 	public Player(String firstName, String lastName, Integer age, String countryOfBirth, BigDecimal annualSalary, Position position, Statistics statistics) {
 		this.firstName = firstName;

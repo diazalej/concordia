@@ -1,3 +1,6 @@
 package ca.soccer.domain;
 
-enum Position {Goalkeeper,Defender,Midfielder,Forward }
+import java.io.Serializable;
+
+public enum Position implements Serializable {Defender, Midfielder,Goalkeeper,Forward }
+
