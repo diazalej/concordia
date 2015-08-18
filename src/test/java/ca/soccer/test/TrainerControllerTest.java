@@ -1,15 +1,16 @@
 package ca.soccer.test;
 
+import ca.soccer.web.PlayerController;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.InternalResourceView;
 import ca.soccer.config.Factory;
-import ca.soccer.data.TrainerRepository;
 import ca.soccer.domain.Trainer;
 import ca.soccer.web.TrainerController;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.hamcrest.core.IsCollectionContaining.hasItems;
 import static org.mockito.Mockito.mock;
@@ -20,34 +21,25 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 public class TrainerControllerTest {
-    Factory factory=new Factory();
 
+    MockMvc mockMvc;
 
-  /*  @Test
-    public void testTrainer() throws Exception {
-        Trainer expectedTrainer = factory.generateRandomTrainer();
-        TrainerRepository mockRepository = mock(TrainerRepository.class);
-        when(mockRepository.findOne(expectedTrainer.getFirstName())).thenReturn(expectedTrainer);
-        TrainerController controller = new TrainerController(mockRepository);
-        MockMvc mockMvc = standaloneSetup(controller).build();
-        mockMvc.perform(get("/trainers/"+expectedTrainer.getFirstName()))
-                .andExpect(view().name("trainer"))
-                .andExpect(model().attributeExists("trainer"))
-                .andExpect(model().attribute("trainer", expectedTrainer));
+    @Before
+    public void setup() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setPrefix("/WEB-INF/jsp/view/");
+        viewResolver.setSuffix(".jsp");
+        viewResolver.setExposeContextBeansAsAttributes(true);
+
+        mockMvc = MockMvcBuilders.standaloneSetup(new TrainerController())
+                .setViewResolvers(viewResolver)
+                .build();
     }
 
-
     @Test
-    public void testShowTrainer() throws Exception {
-        Trainer expectedTrainer = factory.generateRandomTrainer();
-        TrainerRepository mockRepository = mock(TrainerRepository.class);
-        when(mockRepository.findOne(expectedTrainer.getFirstName())).thenReturn(expectedTrainer);
-        TrainerController controller = new TrainerController(mockRepository);
-        MockMvc mockMvc = standaloneSetup(controller).build();
-        mockMvc.perform(get("/trainerDetails/show?trainer_id="+expectedTrainer.getFirstName()))
-                .andExpect(view().name("trainer"))
-                .andExpect(model().attributeExists("trainer"))
-                .andExpect(model().attribute("trainer", expectedTrainer));
-    }*/
+    public void testRegisterTrainerPage() throws Exception {
+        mockMvc.perform(get("/trainers/registerTrainer"))
+                .andExpect(view().name("registerTrainer"));
+    }
 
 }

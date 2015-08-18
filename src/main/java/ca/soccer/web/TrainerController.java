@@ -26,9 +26,8 @@ public class TrainerController {
     Helper helper;
 
     @RequestMapping(value="/show", method=RequestMethod.GET)
-    public String showTrainer(
-            Model model,  HttpSession session) {
-      model.addAttribute((Trainer) session.getAttribute("trainer"));
+    public String showTrainer(Model model,  HttpSession session) {
+        model.addAttribute((Trainer) session.getAttribute("trainer"));
         return "trainerDetails";
     }
 
@@ -45,7 +44,7 @@ public class TrainerController {
         if (!helper.validateTrainer(trainer))
             return "/registerTrainer";
 
-        session.setAttribute("trainer", trainer);6
+        session.setAttribute("trainer", trainer);
         return "redirect:/trainers/show" ;
     }
 

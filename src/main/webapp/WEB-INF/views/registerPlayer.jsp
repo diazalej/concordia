@@ -46,7 +46,7 @@
 	</tr><tr>
 		<td ><input type="submit" value="Register" /></td>
 	</form>
-	<form action="/players">
+	<form action="/">
 		<td><input type="submit" value="Cancel" /></td>
 	</form>
 	</tr>

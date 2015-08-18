@@ -5,10 +5,8 @@
 	<title><c:out value="Details about ${player.firstName} ${player.lastName}" /></title>
 </head>
 <body>
-<div class="playerView">
-	<div class="playerName"><h1><c:out value="${player.firstName} ${player.lastName}" /></h1></div>
-	<div>
-    <span class="playerInfo">
+	<h2><c:out value="${player.firstName} ${player.lastName}" /></h2>
+    <span>
       <b>Country of Birth: </b><c:out value="${player.countryOfBirth}" /><br/>
       <b>Age: </b><c:out value="${player.age}" /><br/>
       <b>Salary: </b><c:out value="${player.annualSalary}" /><br/>
@@ -17,11 +15,9 @@
       <b>Number of Goals: </b><c:out value="${player.statistics.numberOfGoals}" /><br/>
       <b>Number of Goals: </b><c:out value="${player.statistics.numberOfBookings}" /><br/>
     </span>
-	</div>
 	<br/>
 	<form action="/">
-		<input type="submit" value="Back To Homet">
+		<input type="submit" value="Back To Home">
 	</form>
-</div>
 </body>
 </html>
