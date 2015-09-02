@@ -36,7 +36,7 @@
 			<option value="Forward">Forward</option>
 		</select></td>
 	</tr><tr>
-		<td>Salary: </td><td><input type="text" name="salary" /></td>
+		<td>Salary: </td><td><input type="text" name="annualSalary" /></td>
 	</tr><tr>
 		<td colspan="2">Stats</td>
 	</tr><tr>

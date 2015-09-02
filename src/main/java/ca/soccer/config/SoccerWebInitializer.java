@@ -22,5 +22,4 @@ public class SoccerWebInitializer extends AbstractAnnotationConfigDispatcherServ
   protected String[] getServletMappings() {
     return new String[] { "/" };
   }
-
 }

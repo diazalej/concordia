@@ -1,29 +1,52 @@
 package ca.soccer.domain;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.persistence.Entity;
 import java.math.BigDecimal;
+import javax.persistence.Transient;
 import java.util.Currency;
 
-@Component
+//@Component
+@Entity
 public class Player {
+	@NotNull
+	@Id
+	@Column(name = "firstName")
 	private String firstName;
+
+	@NotNull
+	@Column(name = "lastName")
 	private String lastName;
+
+	@NotNull
+	@Column(name = "age")
 	private Integer age;
+
+	@NotNull
+	@Column(name = "countryOfBirth")
 	private String countryOfBirth;
+
+	@NotNull
+	@Column(name = "annualSalary")
 	private BigDecimal annualSalary;
+
+	@Transient
 	private Position position;
+
+	@Transient
 	private Statistics statistics;
 
 	public Player() {}
 
-	public Player(String firstName, String lastName, Integer age, String countryOfBirth, BigDecimal annualSalary, Position position, Statistics statistics) {
+	public Player(String firstName, String lastName, Integer age, String countryOfBirth, BigDecimal annualSalary) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
 		this.countryOfBirth = countryOfBirth;
 		this.annualSalary = annualSalary;
-		this.position = position;
-		this.statistics = statistics;
 	}
 
 	public String getFirstName() {
@@ -71,19 +94,10 @@ public class Player {
 		this.annualSalary = annualSalary;
 	}
 
-	public Position getPosition() {
-		return position;
-	}
-
-	public void setPosition(Position position) {
-		this.position = position;
-	}
-
-	public Statistics getStatistics() {
-		return statistics;
-	}
-
-	public void setStatistics(Statistics statistics) {
-		this.statistics = statistics;
+	@Override
+	public boolean equals(Object obj) {
+		if (obj==null) return false;
+		if (!(obj instanceof Player)) return false;
+		return this.getFirstName().equals(((Player)obj).getFirstName());
 	}
 }

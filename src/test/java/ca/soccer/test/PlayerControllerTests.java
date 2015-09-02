@@ -10,13 +10,13 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 
 public class PlayerControllerTests {
 
-    @Test
+    /*@Test
     public void testRegisterPlayerPage() throws Exception {
         PlayerController controller = new PlayerController();
         MockMvc mockMvc =
                 standaloneSetup(controller).build();
         mockMvc.perform(get("/players/registerPlayer"))
                 .andExpect(view().name("registerPlayer"));
-    }
+    }*/
 
 }

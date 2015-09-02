@@ -1,9 +1,7 @@
 package ca.soccer.config;
 
-import ca.soccer.config.Factory;
 import ca.soccer.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -13,7 +11,7 @@ import java.util.List;
 public class Helper {
 
     @Autowired
-    Factory factory;
+    FactoryLocal factory;
 
     List<Position> positionList = new ArrayList<Position>(Position.values().length);
 
@@ -95,12 +93,6 @@ public class Helper {
             return false;
 
         if (player.getAnnualSalary() == null)
-            return false;
-
-        if (!validatePosition(player.getPosition()))
-            return false;
-
-        if (!validateStatistics(player.getStatistics()))
             return false;
 
         return true;

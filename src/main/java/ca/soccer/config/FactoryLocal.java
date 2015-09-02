@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.util.*;
 
 @Component
-public class Factory {
+public class FactoryLocal {
 
     private final int maxNumberOfGoals = 100;
     private final int maxNumberOfBookins = 40;
@@ -43,16 +43,16 @@ public class Factory {
     private String[] lastNameList = {"Ronaldo", "messi", "Garcia", "Rodriguez", "Casillas", "Lujan", "Dasilva", "Hernandez", "Bale", "Ramos", "Alonso", "Dimaria", "Villa", "Aguero", "Silva", "Alves", "Tevez", "Kroos", "Etoo", "Terry", "Milto", "Kompany"};
 
 
-    public Factory() {
+    public FactoryLocal() {
     }
 
-    public static Factory getInstance() {
-        return new Factory();
+    public static FactoryLocal getInstance() {
+        return new FactoryLocal();
     }
 
     private Trainer getFirstTrainer() {
         if (firstRandomTrainer == null) {
-            firstRandomTrainer = new Trainer(generateFisrtName(), generateLastName(), fistTrainerAge, null, generateAnnualSalary());
+            firstRandomTrainer = new Trainer(generateFisrtName(), generateLastName(), null, generateAnnualSalary());
         }
         return firstRandomTrainer;
     }
@@ -65,7 +65,6 @@ public class Factory {
             firstRandomTeam.setTrainer(getFirstTrainer());
             List<Team> firstTrainerPreviousTeamList = new ArrayList<Team>();
             firstTrainerPreviousTeamList.add(firstRandomTeam);
-            getFirstTrainer().setPreviousTeamList(firstTrainerPreviousTeamList);
             teams.add(firstRandomTeam);
         }
         return firstRandomTeam;
@@ -112,7 +111,7 @@ public class Factory {
         } else {
             previousTeamList.add(getFirstRandomTeam());
         }
-        trainer = new Trainer(firstName, lastName, age, previousTeamList, annualSalary);
+        trainer = new Trainer(firstName, lastName, age,  annualSalary);
         return trainer;
     }
 
@@ -134,7 +133,7 @@ public class Factory {
         annualSalary = generateAnnualSalary();
         Position position = generatePosition();
         Statistics statistics = generateStatistics();
-        player = new Player(firstName, lastName, age, birthCountry, annualSalary, position, statistics);
+        player = new Player(firstName, lastName, age, birthCountry, annualSalary);
         return player;
     }
 

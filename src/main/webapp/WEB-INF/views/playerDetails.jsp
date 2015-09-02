@@ -10,10 +10,7 @@
       <b>Country of Birth: </b><c:out value="${player.countryOfBirth}" /><br/>
       <b>Age: </b><c:out value="${player.age}" /><br/>
       <b>Salary: </b><c:out value="${player.annualSalary}" /><br/>
-      <b>Position: </b><c:out value="${player.position}"/><br/>
-      <b>Stats</b><br/>
-      <b>Number of Goals: </b><c:out value="${player.statistics.numberOfGoals}" /><br/>
-      <b>Number of Goals: </b><c:out value="${player.statistics.numberOfBookings}" /><br/>
+
     </span>
 	<br/>
 	<form action="/">
